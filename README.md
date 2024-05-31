@@ -6,6 +6,7 @@ A StationAPI mod for Minecraft Beta 1.7.3 that provides features from incompatib
 Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
 
 * Modern slab placement (old placement removed when active)
+* Vehicle Login/Logout Fix - Fixes dismounting from vehicle on login
 
 ## List of added recipes
 
