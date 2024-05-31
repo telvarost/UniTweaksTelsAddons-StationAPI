@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "UniTweaksTelsAddons",
-  "description": "Adds in features that were requested, but didn't have enough time to make more real solutions.",
+  "description": "Provides features from incompatible mods of mine to UniTweaks.",
   "authors": [
     "Telvarost"
   ],
@@ -14,7 +14,7 @@
     "sources": "https://github.com/telvarost/UniTweaksTelsAddons-StationAPI/"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/unitweakstelsaddons/icon.png",
 
   "environment": "*",
