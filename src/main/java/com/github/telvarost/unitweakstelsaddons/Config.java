@@ -10,6 +10,10 @@ public class Config {
 
     public static class ConfigFields {
 
+        @ConfigName("Boat Logout/Login Fix")
+        @MultiplayerSynced
+        public Boolean boatLogoutLoginFixesEnabled = true;
+
         @ConfigName("Slab Placement Fixes Enabled")
         @Comment("Restart required for changes to take effect")
         @MultiplayerSynced

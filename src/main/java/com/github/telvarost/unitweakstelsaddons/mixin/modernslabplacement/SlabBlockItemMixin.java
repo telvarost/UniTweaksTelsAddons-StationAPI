@@ -1,4 +1,4 @@
-package com.github.telvarost.unitweakstelsaddons.mixin;
+package com.github.telvarost.unitweakstelsaddons.mixin.modernslabplacement;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;

@@ -1,4 +1,4 @@
-package com.github.telvarost.unitweakstelsaddons.mixin;
+package com.github.telvarost.unitweakstelsaddons.mixin.modernslabplacement;
 
 import com.github.telvarost.unitweakstelsaddons.Config;
 import net.minecraft.block.Block;
