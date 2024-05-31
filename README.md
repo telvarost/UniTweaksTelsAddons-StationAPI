@@ -5,7 +5,7 @@ A StationAPI mod for Minecraft Beta 1.7.3 that provides features from incompatib
 # Telvarost's Addons For UniTweaks
 Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
 
-* Fixes boats on login/logout.
+* Modern slab placement (old placement removed when active)
 
 ## List of added recipes
 
