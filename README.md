@@ -10,15 +10,6 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 * Add day counter in debug screen
   * Number in parentheses is real world days
 
-## List of added recipes
-
-* Craftable XXX.
-
-## Images of recipes
-
-### v1.0.0 Recipes
-![soul_sand craft recipe](https://github.com/telvarost/UniTweaksTelsAddons-StationAPI/blob/main/images/SoulSandRecipe.PNG)
-
 ## Installation using Prism Launcher
 
 1. Download an instance of Babric for Prism Launcher: https://github.com/telvarost/prism-instance/releases/tag/v0.5.0-candidate
