@@ -93,11 +93,11 @@ public class InGameHudMixin extends DrawContext {
 			}
 
 			if (Config.config.addLightLevelToDebugOverlay) {
-				var8.drawWithShadow("Light Level: " + lightLevel, 2, 104, 14737632);
+				var8.drawWithShadow("Light Level: " + lightLevel, 2, 112, 14737632);
 			}
 
 			if (Config.config.addBiomeToDebugOverlay) {
-				var8.drawWithShadow("Biome: " + biomeName, 2, 112, 14737632);
+				var8.drawWithShadow("Biome: " + biomeName, 2, 120, 14737632);
 			}
 		}
 	}
