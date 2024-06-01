@@ -9,8 +9,15 @@ public class Config {
     public static ConfigFields config = new ConfigFields();
 
     public static class ConfigFields {
-        @ConfigName("Add Day Counter To F3 Overlay")
+        @ConfigName("Add Biome To Debug Overlay")
+        public Boolean addBiomeToDebugOverlay = true;
+
+        @ConfigName("Add Day Counter To Debug Overlay")
         public Boolean addDayCounterToDebugOverlay = true;
+
+        @ConfigName("Add Light Level To Debug Overlay")
+        @Comment("Calculated at player's eye level")
+        public Boolean addLightLevelToDebugOverlay = true;
 
         @ConfigName("Boat Logout/Login Fix")
         @MultiplayerSynced
