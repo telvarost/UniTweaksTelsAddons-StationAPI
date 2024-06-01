@@ -7,6 +7,8 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 
 * Modern slab placement (old placement removed when active)
 * Vehicle Login/Logout Fix - Fixes dismounting from vehicle on login
+* Add day counter in debug screen
+  * Number in parentheses is real world days
 
 ## List of added recipes
 

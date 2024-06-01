@@ -9,6 +9,8 @@ public class Config {
     public static ConfigFields config = new ConfigFields();
 
     public static class ConfigFields {
+        @ConfigName("Add Day Counter To F3 Overlay")
+        public Boolean addDayCounterToDebugOverlay = true;
 
         @ConfigName("Boat Logout/Login Fix")
         @MultiplayerSynced

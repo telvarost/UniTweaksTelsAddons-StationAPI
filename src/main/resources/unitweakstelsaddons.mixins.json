@@ -15,6 +15,7 @@
     "vehicleloginlogoutfix.ServerPlayerConnectionManagerMixin"
   ],
   "client": [
+    "extradebuginfo.InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1
