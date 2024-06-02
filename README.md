@@ -7,11 +7,13 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 
 * Modern slab placement (old placement removed when active)
 * Vehicle Login/Logout Fix - Fixes dismounting from vehicle on login
+* Add soul sand to shovel effective block list
 * Add day counter to debug screen
   * Number in parentheses is real world days
 * Add light level to debug screen
   * Calculated at player's eye level
 * Add biome to debug screen
+* Ability to disable different particle types
 
 ## Installation using Prism Launcher
 
