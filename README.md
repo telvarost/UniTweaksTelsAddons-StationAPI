@@ -15,6 +15,11 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 * Add biome to debug screen
 * Ability to disable different particle types
 
+### Legacy Features
+All legacy features are default false unless otherwise specified.
+* Ability for pigs to drop mushrooms
+* Ability to milk squids
+
 ## Installation using Prism Launcher
 
 1. Download an instance of Babric for Prism Launcher: https://github.com/telvarost/prism-instance/releases/tag/v0.5.0-candidate

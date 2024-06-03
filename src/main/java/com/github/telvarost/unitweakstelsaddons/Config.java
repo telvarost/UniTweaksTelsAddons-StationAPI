@@ -30,6 +30,16 @@ public class Config {
         @MultiplayerSynced
         public Boolean boatLogoutLoginFixesEnabled = true;
 
+        @ConfigName("Milk Squids")
+        @MultiplayerSynced
+        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        public Boolean milkSquids = false;
+
+        @ConfigName("Pigs Drop Brown Mushrooms")
+        @MultiplayerSynced
+        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        public Boolean pigsDropBrownMushrooms = false;
+
         @ConfigName("Slab Placement Fixes Enabled")
         @Comment("Restart required for changes to take effect")
         @MultiplayerSynced
