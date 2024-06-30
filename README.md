@@ -1,6 +1,8 @@
 # UniTweaksTelsAddons StationAPI Edition for Minecraft Beta 1.7.3
 
 A StationAPI mod for Minecraft Beta 1.7.3 that provides features from incompatible mods of mine to UniTweaks.
+Big thanks to Dany for all of his hardwork and contributions :D
+This mod is liable to change at Dany's discretion if the need arises for it.
 
 # Telvarost's Addons For UniTweaks
 Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
