@@ -4,6 +4,8 @@ A StationAPI mod for Minecraft Beta 1.7.3 that provides features from incompatib
 Big thanks to Dany for all of his hardwork and contributions :D
 This mod is liable to change at Dany's discretion if the need arises for it.
 
+Find UniTweaks here: [https://modrinth.com/mod/unitweaks](https://modrinth.com/mod/unitweaks)
+
 # Telvarost's Addons For UniTweaks
 Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
 
