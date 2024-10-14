@@ -57,15 +57,15 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
             method = "interact",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;method_1323(Lnet/minecraft/entity/player/PlayerEntity;)Z"
+                    target = "Lnet/minecraft/entity/Entity;interact(Lnet/minecraft/entity/player/PlayerEntity;)Z"
             )
     )
     public boolean interactWith(Entity instance, PlayerEntity playerBase) {
-        boolean canInteract = instance.method_1323(playerBase);
+        boolean canInteract = instance.interact(playerBase);
 
         if (Config.config.boatLogoutLoginFixesEnabled && canInteract) {
             /** - Set vehicle data */
-            _vehicleName = (instance.field_1594 != null) ?  EntityRegistry.getId(instance) : NULL_AS_STRING;
+            _vehicleName = (instance.passenger != null) ?  EntityRegistry.getId(instance) : NULL_AS_STRING;
             if (!_vehicleName.equals(NULL_AS_STRING)) {
                 instance.write(_vehicleTag);
             }
@@ -83,10 +83,10 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
         }
 
         /** - Save vehicle data */
-        _vehicleName = (this.field_1595 != null) ?  EntityRegistry.getId(this.field_1595) : NULL_AS_STRING;
+        _vehicleName = (this.vehicle != null) ?  EntityRegistry.getId(this.vehicle) : NULL_AS_STRING;
         tag.putString("VehicleName", _vehicleName);
         if (!_vehicleName.equals(NULL_AS_STRING)) {
-            this.field_1595.write(_vehicleTag);
+            this.vehicle.write(_vehicleTag);
             tag.put("VehicleTag", _vehicleTag);
         }
     }
@@ -117,7 +117,7 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
             try {
                 vehicle.read(_vehicleTag);
             } catch(Exception ex) {
-                vehicle.method_1341(x, y, z, yaw, pitch);
+                vehicle.setPositionAndAnglesKeepPrevAngles(x, y, z, yaw, pitch);
                 System.out.println("Failed to read vehicle data");
             }
 
@@ -127,8 +127,8 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
             VehicleHelper.savedVehicleZ = vehicle.z;
 
             /** - Search for vehicle */
-            for (int entityIndex = 0; entityIndex < world.field_198.size(); entityIndex++) {
-                Entity entityToCheck = (Entity) world.field_198.get(entityIndex);
+            for (int entityIndex = 0; entityIndex < world.entities.size(); entityIndex++) {
+                Entity entityToCheck = (Entity) world.entities.get(entityIndex);
 
                 if (  (entityToCheck.getClass().equals(VehicleHelper.savedVehicleClass))
                    && (1 > Math.abs(entityToCheck.x - vehicle.x))
@@ -140,7 +140,7 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
             }
 
             if (null != savedVehicle) {
-                method_1376(savedVehicle);
+                setVehicle(savedVehicle);
                 VehicleHelper.isVehicleSaved = false;
             }
         }

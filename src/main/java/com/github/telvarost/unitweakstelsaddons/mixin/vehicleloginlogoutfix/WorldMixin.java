@@ -19,13 +19,13 @@ public class WorldMixin {
 
     @Shadow public boolean isRemote;
 
-    @Shadow public List field_198;
+    @Shadow public List entities;
 
     @Inject(
-            method = "method_210",
+            method = "spawnEntity",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/world/World;method_219(Lnet/minecraft/entity/Entity;)V"
+                    target = "Lnet/minecraft/world/World;notifyEntityAdded(Lnet/minecraft/entity/Entity;)V"
             )
     )
     public void spawnEntity(Entity arg, CallbackInfoReturnable<Boolean> cir) {
@@ -34,8 +34,8 @@ public class WorldMixin {
            && (!this.isRemote)
         ) {
             /** - Find saved vehicle if on single player */
-            for (int entityIndex = 0; entityIndex < this.field_198.size(); entityIndex++) {
-                Entity entityToCheck = (Entity) this.field_198.get(entityIndex);
+            for (int entityIndex = 0; entityIndex < this.entities.size(); entityIndex++) {
+                Entity entityToCheck = (Entity) this.entities.get(entityIndex);
 
                 if (  (entityToCheck.getClass().equals(VehicleHelper.savedVehicleClass))
                    && (1 > Math.abs(entityToCheck.x - VehicleHelper.savedVehicleX))
@@ -44,7 +44,7 @@ public class WorldMixin {
                 ) {
                     PlayerEntity player = PlayerHelper.getPlayerFromGame();
                     if (null != player) {
-                        player.method_1376(entityToCheck);
+                        player.setVehicle(entityToCheck);
                     }
                     VehicleHelper.isVehicleSaved = false;
                 }

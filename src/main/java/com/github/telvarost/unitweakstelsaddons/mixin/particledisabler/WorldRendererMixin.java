@@ -23,7 +23,7 @@ public class WorldRendererMixin {
 
 	@Shadow private TextureManager textureManager;
 
-	@Inject(method = "method_1153", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "addParticle", at = @At("HEAD"), cancellable = true)
 	public void addParticle(String string, double d, double e, double f, double g, double h, double i, CallbackInfo ci) {
 		if (Config.config.PARTICLES_CONFIG.disableAllParticles) {
 			ci.cancel();
@@ -31,10 +31,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 0
 			),
 			cancellable = true
@@ -46,10 +46,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 1
 			),
 			cancellable = true
@@ -61,10 +61,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 2
 			),
 			cancellable = true
@@ -76,10 +76,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 3
 			),
 			cancellable = true
@@ -91,10 +91,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 4
 			),
 			cancellable = true
@@ -106,10 +106,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 5
 			),
 			cancellable = true
@@ -121,10 +121,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 6
 			),
 			cancellable = true
@@ -136,10 +136,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 7
 			),
 			cancellable = true
@@ -151,10 +151,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 8
 			),
 			cancellable = true
@@ -166,10 +166,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 9
 			),
 			cancellable = true
@@ -181,10 +181,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 10
 			),
 			cancellable = true
@@ -196,10 +196,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 11
 			),
 			cancellable = true
@@ -211,10 +211,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 12
 			),
 			cancellable = true
@@ -226,10 +226,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 13
 			),
 			cancellable = true
@@ -241,10 +241,10 @@ public class WorldRendererMixin {
 	}
 
 	@Inject(
-			method = "method_1153",
+			method = "addParticle",
 			at = @At(
 					value = "INVOKE",
-					target = "Lnet/minecraft/class_75;method_325(Lnet/minecraft/client/particle/Particle;)V",
+					target = "Lnet/minecraft/client/particle/ParticleManager;addParticle(Lnet/minecraft/client/particle/Particle;)V",
 					ordinal = 14
 			),
 			cancellable = true

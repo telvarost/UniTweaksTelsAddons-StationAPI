@@ -1,7 +1,7 @@
 package com.github.telvarost.unitweakstelsaddons.mixin.milksquids;
 
 import com.github.telvarost.unitweakstelsaddons.Config;
-import net.minecraft.entity.mob.WaterCreatureEntity;
+import net.minecraft.entity.WaterCreatureEntity;
 import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -16,7 +16,7 @@ public class SquidEntityMixin extends WaterCreatureEntity {
     }
 
     @Override
-    public boolean method_1323(PlayerEntity arg) {
+    public boolean interact(PlayerEntity arg) {
         if (Config.config.milkSquids) {
             ItemStack var2 = arg.inventory.getSelectedItem();
             if (var2 != null && var2.itemId == Item.BUCKET.id) {

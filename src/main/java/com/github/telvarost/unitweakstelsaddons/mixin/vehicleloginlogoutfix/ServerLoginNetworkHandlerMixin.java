@@ -20,11 +20,11 @@ public abstract class ServerLoginNetworkHandlerMixin {
             method = "accept",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/entity/player/ServerPlayerEntity;method_317()V"
+                    target = "Lnet/minecraft/entity/player/ServerPlayerEntity;initScreenHandler()V"
             )
     )
     public void annoyanceFix_completeLoadVehicle(ServerPlayerEntity instance) {
-        instance.method_317();
+        instance.initScreenHandler();
 
         if (Config.config.boatLogoutLoginFixesEnabled) {
             /** - Spawn saved vehicle if on multiplayer */
@@ -37,11 +37,11 @@ public abstract class ServerLoginNetworkHandlerMixin {
                         try {
                             vehicle.read(vehicleTag);
                         } catch(Exception ex) {
-                            vehicle.method_1341(instance.x, instance.y, instance.z, instance.yaw, instance.pitch);
+                            vehicle.setPositionAndAnglesKeepPrevAngles(instance.x, instance.y, instance.z, instance.yaw, instance.pitch);
                             System.out.println("Failed to read vehicle data");
                         }
-                        instance.world.method_210(vehicle);
-                        instance.method_1376(vehicle);
+                        instance.world.spawnEntity(vehicle);
+                        instance.setVehicle(vehicle);
                     }
                 }
             }

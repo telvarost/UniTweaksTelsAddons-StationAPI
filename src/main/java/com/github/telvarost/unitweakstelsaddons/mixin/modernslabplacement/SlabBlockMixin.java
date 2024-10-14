@@ -2,7 +2,7 @@ package com.github.telvarost.unitweakstelsaddons.mixin.modernslabplacement;
 
 import com.github.telvarost.unitweakstelsaddons.Config;
 import net.minecraft.block.Block;
-import net.minecraft.block.Material;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;

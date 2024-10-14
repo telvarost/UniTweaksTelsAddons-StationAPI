@@ -37,8 +37,8 @@ public class InGameHudMixin extends DrawContext {
 	public void uniTweaksTelsAddons_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
 		TextRenderer var8 = this.minecraft.textRenderer;
 		if (Config.config.addDayCounterToDebugOverlay) {
-			long realDaysPlayed = Duration.ofSeconds(minecraft.field_2773.method_1989(Stats.PLAY_ONE_MINUTE) / 20).toDays();
-			long gameDaysPlayed = Duration.ofSeconds(minecraft.field_2773.method_1989(Stats.PLAY_ONE_MINUTE) / 20).toMinutes() / 20;
+			long realDaysPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toDays();
+			long gameDaysPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toMinutes() / 20;
 			var8.drawWithShadow("Days Played: " + gameDaysPlayed + " (" + realDaysPlayed + ")", 2, 96, 14737632);
 		}
 
@@ -48,7 +48,7 @@ public class InGameHudMixin extends DrawContext {
 			String biomeName = "Unknown";
 
 			if (null != player) {
-				float light = player.method_1394(1.0F);
+				float light = player.getBrightnessAtEyes(1.0F);
 
 				if (light < 0.06) {
 					lightLevel = 0;
@@ -85,7 +85,7 @@ public class InGameHudMixin extends DrawContext {
 				}
 
 				if (null != player.world && null != player.world.method_1781()) {
-					Biome biome = player.world.method_1781().method_1787((int)Math.floor(player.x), (int)Math.floor(player.z));
+					Biome biome = player.world.method_1781().getBiome((int)Math.floor(player.x), (int)Math.floor(player.z));
 					if (null != biome) {
 						biomeName = biome.name;
 					}
