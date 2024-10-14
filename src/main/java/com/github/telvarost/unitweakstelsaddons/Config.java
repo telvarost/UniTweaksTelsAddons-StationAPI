@@ -1,107 +1,102 @@
 package com.github.telvarost.unitweakstelsaddons;
 
 import blue.endless.jankson.Comment;
-import net.glasslauncher.mods.api.gcapi.api.*;
+import net.glasslauncher.mods.gcapi3.api.*;
 
 public class Config {
 
-    @GConfig(value = "config", visibleName = "UniTweaksTelsAddons")
+    @ConfigRoot(value = "config", visibleName = "UniTweaksTelsAddons")
     public static ConfigFields config = new ConfigFields();
 
     public static class ConfigFields {
-        @ConfigCategory("Particles Config")
+        @ConfigCategory(name = "Particles Config")
         public ParticlesConfig PARTICLES_CONFIG = new ParticlesConfig();
 
-        @ConfigCategory("Config: Effectivity List Additions For Shovels")
+        @ConfigCategory(name = "Config: Effectivity List Additions For Shovels")
         @Comment("Options here require restart to take effect")
         public final ShovelsConfig SHOVELS_CONFIG = new ShovelsConfig();
 
-        @ConfigName("Add Biome To Debug Overlay")
+        @ConfigEntry(name = "Add Biome To Debug Overlay")
         public Boolean addBiomeToDebugOverlay = true;
 
-        @ConfigName("Add Day Counter To Debug Overlay")
+        @ConfigEntry(name = "Add Day Counter To Debug Overlay")
         public Boolean addDayCounterToDebugOverlay = true;
 
-        @ConfigName("Add Light Level To Debug Overlay")
+        @ConfigEntry(name = "Add Light Level To Debug Overlay")
         @Comment("Calculated at player's eye level")
         public Boolean addLightLevelToDebugOverlay = true;
 
-        @ConfigName("Boat Logout/Login Fix")
-        @MultiplayerSynced
+        @ConfigEntry(name = "Boat Logout/Login Fix", multiplayerSynced = true)
         public Boolean boatLogoutLoginFixesEnabled = true;
 
-        @ConfigName("Milk Squids")
-        @MultiplayerSynced
+        @ConfigEntry(name = "Milk Squids", multiplayerSynced = true)
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean milkSquids = false;
 
-        @ConfigName("Pigs Drop Brown Mushrooms")
-        @MultiplayerSynced
+        @ConfigEntry(name = "Pigs Drop Brown Mushrooms", multiplayerSynced = true)
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean pigsDropBrownMushrooms = false;
 
-        @ConfigName("Slab Placement Fixes Enabled")
+        @ConfigEntry(name = "Slab Placement Fixes Enabled", multiplayerSynced = true)
         @Comment("Restart required for changes to take effect")
-        @MultiplayerSynced
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean slabPlacementFixesEnabled = true;
     }
 
     public static class ShovelsConfig {
-        @ConfigName("Effective On Soul Sand")
-        @MultiplayerSynced
+        @ConfigEntry(name = "Effective On Soul Sand", multiplayerSynced = true)
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean enableShovelsEffectiveOnSoulSand = true;
     }
 
 
     public static class ParticlesConfig {
-        @ConfigName("Disable All Particles")
+        @ConfigEntry(name = "Disable All Particles")
         public Boolean disableAllParticles = false;
 
-        @ConfigName("Disable Water Bubble Particle")
+        @ConfigEntry(name = "Disable Water Bubble Particle")
         public Boolean disableWaterBubbleParticle = false;
 
-        @ConfigName("Disable Smoke Particle")
+        @ConfigEntry(name = "Disable Smoke Particle")
         public Boolean disableFireSmokeParticle = false;
 
-        @ConfigName("Disable Note Particle")
+        @ConfigEntry(name = "Disable Note Particle")
         public Boolean disableNoteParticle = false;
 
-        @ConfigName("Disable Portal Particle")
+        @ConfigEntry(name = "Disable Portal Particle")
         public Boolean disablePortalParticle = false;
 
-        @ConfigName("Disable Explosion Particle")
+        @ConfigEntry(name = "Disable Explosion Particle")
         public Boolean disableExplosionParticle = false;
 
-        @ConfigName("Disable Flame Particle")
+        @ConfigEntry(name = "Disable Flame Particle")
         public Boolean disableFlameParticle = false;
 
-        @ConfigName("Disable Lava Ember Particle")
+        @ConfigEntry(name = "Disable Lava Ember Particle")
         public Boolean disableLavaEmberParticle = false;
 
-        @ConfigName("Disable Footstep Particle")
+        @ConfigEntry(name = "Disable Footstep Particle")
         public Boolean disableFootstepParticle = false;
 
-        @ConfigName("Disable Water Splash Particle")
+        @ConfigEntry(name = "Disable Water Splash Particle")
         public Boolean disableWaterSplashParticle = false;
 
-        @ConfigName("Disable Large Smoke Particle")
+        @ConfigEntry(name = "Disable Large Smoke Particle")
         public Boolean disableLargeFireSmokeParticle = false;
 
-        @ConfigName("Disable Redstone Dust Particle")
+        @ConfigEntry(name = "Disable Redstone Dust Particle")
         public Boolean disableRedDustParticle = false;
 
-        @ConfigName("Disable Snowball Particle")
+        @ConfigEntry(name = "Disable Snowball Particle")
         public Boolean disableSnowballParticle = false;
 
-        @ConfigName("Disable Snow Shovel Particle")
+        @ConfigEntry(name = "Disable Snow Shovel Particle")
         public Boolean disableSnowShovelParticle = false;
 
-        @ConfigName("Disable Slime Particle")
+        @ConfigEntry(name = "Disable Slime Particle")
         public Boolean disableSlimeParticle = false;
 
-        @ConfigName("Disable Heart Particle")
+        @ConfigEntry(name = "Disable Heart Particle")
         public Boolean disableHeartParticle = false;
     }
 }
