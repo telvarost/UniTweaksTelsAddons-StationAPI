@@ -53,7 +53,6 @@ public class UniTweaksTelsAddonsMixinPlugin implements IMixinConfigPlugin {
 
     }
 
-    @SuppressWarnings("RedundantIfStatement")
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         Config.config.slabPlacementFixesEnabled = config.getBoolean("slabPlacementFixesEnabled");
