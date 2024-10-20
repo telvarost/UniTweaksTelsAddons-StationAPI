@@ -55,7 +55,7 @@ public class UniTweaksTelsAddonsMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        Config.config.slabPlacementFixesEnabled = config.getBoolean("slabPlacementFixesEnabled");
+        Config.config.slabPlacementFixesEnabled = config.getBoolean("slabPlacementFixesEnabled", true);
 
         if (mixinClassName.equals("com.github.telvarost.unitweakstelsaddons.mixin.modernslabplacement.SlabBlockItemMixin")) {
             return Config.config.slabPlacementFixesEnabled;
