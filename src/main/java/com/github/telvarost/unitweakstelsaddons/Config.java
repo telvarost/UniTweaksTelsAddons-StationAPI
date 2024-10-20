@@ -12,8 +12,10 @@ public class Config {
         @ConfigCategory(name = "Particles Config")
         public ParticlesConfig PARTICLES_CONFIG = new ParticlesConfig();
 
-        @ConfigCategory(name = "Config: Effectivity List Additions For Shovels")
-        @Comment("Options here require restart to take effect")
+        @ConfigCategory(
+                name = "Config: Effectivity List Additions For Shovels",
+                description = "Options here require restart to take effect"
+        )
         public final ShovelsConfig SHOVELS_CONFIG = new ShovelsConfig();
 
         @ConfigEntry(name = "Add Biome To Debug Overlay")
@@ -22,8 +24,10 @@ public class Config {
         @ConfigEntry(name = "Add Day Counter To Debug Overlay")
         public Boolean addDayCounterToDebugOverlay = true;
 
-        @ConfigEntry(name = "Add Light Level To Debug Overlay")
-        @Comment("Calculated at player's eye level")
+        @ConfigEntry(
+                name = "Add Light Level To Debug Overlay",
+                description = "Calculated at player's eye level"
+        )
         public Boolean addLightLevelToDebugOverlay = true;
 
         @ConfigEntry(name = "Boat Logout/Login Fix", multiplayerSynced = true)
@@ -37,8 +41,11 @@ public class Config {
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean pigsDropBrownMushrooms = false;
 
-        @ConfigEntry(name = "Slab Placement Fixes Enabled", multiplayerSynced = true)
-        @Comment("Restart required for changes to take effect")
+        @ConfigEntry(
+                name = "Slab Placement Fixes Enabled",
+                description = "Restart required for changes to take effect",
+                multiplayerSynced = true
+        )
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean slabPlacementFixesEnabled = true;
     }

@@ -80,7 +80,7 @@ dependencies {
 	modImplementation("com.github.calmilamsy:ModMenu:${project.modmenu_version}") {
 		transitive false
 	}
-	modImplementation("net.glasslauncher.mods:GlassConfigAPI:${project.gcapi3_version}") {
+	modImplementation("net.glasslauncher.mods:GlassConfigAPI:${project.gcapi_version}") {
 		transitive false
 	}
 	modImplementation("net.glasslauncher:HowManyItems-Fabric-Unofficial:${project.howmanyitems_version}") {
