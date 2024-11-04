@@ -25,7 +25,7 @@ public abstract class PlayerBaseMixin extends LivingEntity {
     }
 
     @Unique
-    private void betaTweaks_clearSlotData(NbtCompound tag, int slotIndex)
+    private void uniTweaksTelsAddons_clearSlotData(NbtCompound tag, int slotIndex)
     {
         tag.putInt("ItemID_Slot" + slotIndex, 0);
         tag.putInt("ItemAmount_Slot" + slotIndex, 0);
@@ -33,7 +33,7 @@ public abstract class PlayerBaseMixin extends LivingEntity {
     }
 
     @Inject(method = "writeNbt", at = @At("HEAD"))
-    private void betaTweaks_writeCustomDataToTag(NbtCompound tag, CallbackInfo info) {
+    private void uniTweaksTelsAddons_writeCustomDataToTag(NbtCompound tag, CallbackInfo info) {
         if (!Config.config.allowCraftingInventorySlots) {
             return;
         }
@@ -44,7 +44,7 @@ public abstract class PlayerBaseMixin extends LivingEntity {
             for (int slotIndex = 0; slotIndex < 4; ++slotIndex) {
                 ItemStack itemInSlot = currentCraftingGrid.craftingInput.getStack(slotIndex);
                 if (null == itemInSlot) {
-                    betaTweaks_clearSlotData(tag, slotIndex);
+                    uniTweaksTelsAddons_clearSlotData(tag, slotIndex);
                 }
                 else
                 {
@@ -57,15 +57,15 @@ public abstract class PlayerBaseMixin extends LivingEntity {
         else
         {
             /** - Clear all slots */
-            betaTweaks_clearSlotData(tag, 0);
-            betaTweaks_clearSlotData(tag, 1);
-            betaTweaks_clearSlotData(tag, 2);
-            betaTweaks_clearSlotData(tag, 3);
+            uniTweaksTelsAddons_clearSlotData(tag, 0);
+            uniTweaksTelsAddons_clearSlotData(tag, 1);
+            uniTweaksTelsAddons_clearSlotData(tag, 2);
+            uniTweaksTelsAddons_clearSlotData(tag, 3);
         }
     }
 
     @Inject(method = "readNbt", at = @At("HEAD"))
-    private void betaTweaks_readCustomDataFromTag(NbtCompound tag, CallbackInfo info) {
+    private void uniTweaksTelsAddons_readCustomDataFromTag(NbtCompound tag, CallbackInfo info) {
         if (!Config.config.allowCraftingInventorySlots) {
             return;
         }

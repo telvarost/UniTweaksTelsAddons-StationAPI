@@ -34,7 +34,7 @@ public class InGameHudMixin extends DrawContext {
 					target = "Lnet/minecraft/client/font/TextRenderer;drawWithShadow(Ljava/lang/String;III)V"
 			)
 	)
-	public void clientsideEssentials_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
+	public void uniTweaksTelsAddons_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
 		TextRenderer var8 = this.minecraft.textRenderer;
 
 		if (Config.config.addTotalPlayTimeToDebugOverlay) {

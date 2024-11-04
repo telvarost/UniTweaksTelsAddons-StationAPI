@@ -21,7 +21,7 @@ public class PlayerContainerMixin extends ScreenHandler {
     }
 
     @Inject(method = "onClosed", at = @At("HEAD"), cancellable = true)
-    public void onClosed(PlayerEntity arg, CallbackInfo ci) {
+    public void uniTweaksTelsAddons_onClosed(PlayerEntity arg, CallbackInfo ci) {
         if (Config.config.allowCraftingInventorySlots)
         {
             super.onClosed(arg);
