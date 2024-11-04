@@ -37,11 +37,11 @@ public class Config {
         public Boolean boatLogoutLoginFixesEnabled = true;
 
         @ConfigEntry(name = "Milk Squids", multiplayerSynced = true)
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean milkSquids = false;
 
         @ConfigEntry(name = "Pigs Drop Brown Mushrooms", multiplayerSynced = true)
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean pigsDropBrownMushrooms = false;
 
         @ConfigEntry(
@@ -49,20 +49,20 @@ public class Config {
                 description = "Restart required for changes to take effect",
                 multiplayerSynced = true
         )
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean slabPlacementFixesEnabled = true;
 
         @ConfigEntry(
                 name = "Use Player 2x2 Crafting Grid As Inventory",
                 multiplayerSynced = true
         )
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean allowCraftingInventorySlots = false;
     }
 
     public static class ShovelsConfig {
         @ConfigEntry(name = "Effective On Soul Sand", multiplayerSynced = true)
-        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean enableShovelsEffectiveOnSoulSand = true;
     }
 
