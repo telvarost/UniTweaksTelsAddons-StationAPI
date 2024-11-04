@@ -28,24 +28,32 @@ public class InGameHudMixin extends DrawContext {
 	private Minecraft minecraft;
 
 	@Inject(
-		method = "render",
-		at = @At(
-			value = "INVOKE",
-			target = "Lnet/minecraft/client/font/TextRenderer;drawWithShadow(Ljava/lang/String;III)V"
-		)
+			method = "render",
+			at = @At(
+					value = "INVOKE",
+					target = "Lnet/minecraft/client/font/TextRenderer;drawWithShadow(Ljava/lang/String;III)V"
+			)
 	)
-	public void uniTweaksTelsAddons_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
+	public void clientsideEssentials_render(float bl, boolean i, int j, int par4, CallbackInfo ci)  {
 		TextRenderer var8 = this.minecraft.textRenderer;
-		if (Config.config.addDayCounterToDebugOverlay) {
-			long realDaysPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toDays();
-			long gameDaysPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toMinutes() / 20;
-			var8.drawWithShadow("Days Played: " + gameDaysPlayed + " (" + realDaysPlayed + ")", 2, 96, 14737632);
+
+		if (Config.config.addTotalPlayTimeToDebugOverlay) {
+			long realHoursPlayed = Duration.ofSeconds(minecraft.stats.get(Stats.PLAY_ONE_MINUTE) / 20).toHours();
+			if (1 == realHoursPlayed) {
+				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hour", 2, 96, 14737632);
+			} else {
+				var8.drawWithShadow("Play Time: " + realHoursPlayed + " hours", 2, 96, 14737632);
+			}
 		}
 
-		if (Config.config.addLightLevelToDebugOverlay || Config.config.addBiomeToDebugOverlay) {
+		if (  Config.config.addLightLevelToDebugOverlay
+		   || Config.config.addBiomeToDebugOverlay
+		   || Config.config.addDayCounterToDebugOverlay
+		) {
 			PlayerEntity player = PlayerHelper.getPlayerFromGame();
 			int lightLevel = 0;
 			String biomeName = "Unknown";
+			long dayCount = 0;
 
 			if (null != player) {
 				float light = player.getBrightnessAtEyes(1.0F);
@@ -84,10 +92,16 @@ public class InGameHudMixin extends DrawContext {
 					lightLevel = 15;
 				}
 
-				if (null != player.world && null != player.world.method_1781()) {
-					Biome biome = player.world.method_1781().getBiome((int)Math.floor(player.x), (int)Math.floor(player.z));
-					if (null != biome) {
-						biomeName = biome.name;
+				if (null != player.world) {
+					if (null != player.world.getProperties()) {
+						dayCount = (int) Math.floor(player.world.getProperties().getTime() / 24000);
+					}
+
+					if (null != player.world.method_1781()) {
+						Biome biome = player.world.method_1781().getBiome((int)Math.floor(player.x), (int)Math.floor(player.z));
+						if (null != biome) {
+							biomeName = biome.name;
+						}
 					}
 				}
 			}
@@ -98,6 +112,10 @@ public class InGameHudMixin extends DrawContext {
 
 			if (Config.config.addBiomeToDebugOverlay) {
 				var8.drawWithShadow("Biome: " + biomeName, 2, 120, 14737632);
+			}
+
+			if (Config.config.addDayCounterToDebugOverlay) {
+				var8.drawWithShadow("Day: " + dayCount, 2, 128, 14737632);
 			}
 		}
 	}

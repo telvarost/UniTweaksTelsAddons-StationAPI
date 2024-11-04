@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "plugin": "com.github.telvarost.unitweakstelsaddons.UniTweaksTelsAddonsMixinPlugin",
   "mixins": [
+    "keepplayercraftinggrid.PlayerBaseMixin",
+    "keepplayercraftinggrid.PlayerContainerMixin",
     "milksquids.SquidEntityMixin",
     "modernslabplacement.SlabBlockMixin",
     "modernslabplacement.SlabBlockItemMixin",

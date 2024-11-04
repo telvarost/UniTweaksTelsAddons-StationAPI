@@ -20,7 +20,6 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "com.github.telvarost.unitweakstelsaddons.events.init.RecipeListener"
     ],
     "stationapi:event_bus_client": [
     ],
@@ -28,9 +27,6 @@
     ],
     "gcapi3": [
       "com.github.telvarost.unitweakstelsaddons.Config"
-    ],
-    "gcapi3:presave": [
-      "com.github.telvarost.unitweakstelsaddons.events.ConfigListener"
     ]
   },
   "mixins": [

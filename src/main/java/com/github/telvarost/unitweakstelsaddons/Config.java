@@ -1,6 +1,5 @@
 package com.github.telvarost.unitweakstelsaddons;
 
-import blue.endless.jankson.Comment;
 import net.glasslauncher.mods.gcapi3.api.*;
 
 public class Config {
@@ -21,8 +20,12 @@ public class Config {
         @ConfigEntry(name = "Add Biome To Debug Overlay")
         public Boolean addBiomeToDebugOverlay = true;
 
+
         @ConfigEntry(name = "Add Day Counter To Debug Overlay")
         public Boolean addDayCounterToDebugOverlay = true;
+
+        @ConfigEntry(name = "Add Hours Played To Debug Overlay")
+        public Boolean addTotalPlayTimeToDebugOverlay = true;
 
         @ConfigEntry(
                 name = "Add Light Level To Debug Overlay",
@@ -48,6 +51,13 @@ public class Config {
         )
         @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean slabPlacementFixesEnabled = true;
+
+        @ConfigEntry(
+                name = "Use Player 2x2 Crafting Grid As Inventory",
+                multiplayerSynced = true
+        )
+        @ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        public Boolean allowCraftingInventorySlots = false;
     }
 
     public static class ShovelsConfig {
