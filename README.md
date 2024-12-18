@@ -18,6 +18,7 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
   * Calculated at player's eye level
 * Add biome to debug screen
 * Ability to disable different particle types
+* Ability to use modern stack sizes for signs, wooden doors, and iron doors
 
 ### Legacy Features
 All legacy features are default false unless otherwise specified.
