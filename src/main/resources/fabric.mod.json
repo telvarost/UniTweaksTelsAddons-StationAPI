@@ -20,6 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
+      "com.github.telvarost.unitweakstelsaddons.events.RegistryListener"
     ],
     "stationapi:event_bus_client": [
     ],
@@ -27,6 +28,9 @@
     ],
     "gcapi3": [
       "com.github.telvarost.unitweakstelsaddons.Config"
+    ],
+    "gcapi3:presave": [
+      "com.github.telvarost.unitweakstelsaddons.events.ConfigListener"
     ]
   },
   "mixins": [
@@ -35,7 +39,7 @@
 
   "depends": {
     "minecraft": "1.0.0-beta.7.3",
-    "gcapi3": ">=3.0.0",
+    "gcapi3": ">=3.0.2",
     "stationapi": "*"
   },
 

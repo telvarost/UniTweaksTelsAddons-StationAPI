@@ -12,6 +12,12 @@ public class Config {
         public ParticlesConfig PARTICLES_CONFIG = new ParticlesConfig();
 
         @ConfigCategory(
+                name = "Stack Size Config",
+                description = "Options here require restart to take effect"
+        )
+        public StackSizeConfig STACK_SIZE_CONFIG = new StackSizeConfig();
+
+        @ConfigCategory(
                 name = "Config: Effectivity List Additions For Shovels",
                 description = "Options here require restart to take effect"
         )
@@ -19,7 +25,6 @@ public class Config {
 
         @ConfigEntry(name = "Add Biome To Debug Overlay")
         public Boolean addBiomeToDebugOverlay = true;
-
 
         @ConfigEntry(name = "Add Day Counter To Debug Overlay")
         public Boolean addDayCounterToDebugOverlay = true;
@@ -60,8 +65,31 @@ public class Config {
         public Boolean allowCraftingInventorySlots = false;
     }
 
+    public static class StackSizeConfig {
+        @ConfigEntry(
+                name = "Enable Modern Wood Door Stack Size",
+                multiplayerSynced = true
+        )
+        public Boolean enableModernWoodDoorStackSize = false;
+
+        @ConfigEntry(
+                name = "Enable Modern Iron Door Stack Size",
+                multiplayerSynced = true
+        )
+        public Boolean enableModernIronDoorStackSize = false;
+
+        @ConfigEntry(
+                name = "Enable Modern Sign Stack Size",
+                multiplayerSynced = true
+        )
+        public Boolean enableModernSignStackSize = false;
+    }
+
     public static class ShovelsConfig {
-        @ConfigEntry(name = "Effective On Soul Sand", multiplayerSynced = true)
+        @ConfigEntry(
+                name = "Effective On Soul Sand",
+                multiplayerSynced = true
+        )
         //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean enableShovelsEffectiveOnSoulSand = true;
     }
