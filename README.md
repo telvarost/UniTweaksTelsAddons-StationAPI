@@ -27,11 +27,11 @@ All legacy features are default false unless otherwise specified.
 
 ## Installation using Prism Launcher
 
-1. Download an instance of Babric for Prism Launcher: https://github.com/telvarost/prism-instance/releases/tag/v0.5.0-candidate
+1. Download an instance of Babric for Prism Launcher: https://github.com/Glass-Series/babric-prism-instance
 2. Install Java 17 and set the instance to use it: https://adoptium.net/temurin/releases/
 3. Add StationAPI to the mod folder for the instance: https://modrinth.com/mod/stationapi
-4. (Optional) Add Mod Menu to the mod folder for the instance: https://modrinth.com/mod/modmenu-beta
-5. (Optional) Add GlassConfigAPI 2.0+ to the mod folder for the instance: https://modrinth.com/mod/glass-config-api
+4. Add Mod Menu to the mod folder for the instance: https://modrinth.com/mod/modmenu-beta
+5. Add GlassConfigAPI 3.0.1+ to the mod folder for the instance: https://modrinth.com/mod/glass-config-api
 6. Add this mod to the mod folder for the instance: https://github.com/telvarost/UniTweaksTelsAddons-StationAPI/releases
 7. Run and enjoy! 👍
 
