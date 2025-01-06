@@ -38,6 +38,9 @@ public class Config {
         )
         public Boolean addLightLevelToDebugOverlay = true;
 
+        @ConfigEntry(name = "Add Slime Chunk To Debug Overlay")
+        public Boolean addSlimeChunkToDebugOverlay = true;
+
         @ConfigEntry(name = "Boat Logout/Login Fix", multiplayerSynced = true)
         public Boolean boatLogoutLoginFixesEnabled = true;
 

@@ -8,7 +8,9 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.stat.Stats;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.Chunk;
 import net.modificationstation.stationapi.api.entity.player.PlayerHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -54,6 +56,7 @@ public class InGameHudMixin extends DrawContext {
 			int lightLevel = 0;
 			String biomeName = "Unknown";
 			long dayCount = 0;
+			boolean isSlimeChunk = false;
 
 			if (null != player) {
 				float light = player.getBrightnessAtEyes(1.0F);
@@ -93,6 +96,9 @@ public class InGameHudMixin extends DrawContext {
 				}
 
 				if (null != player.world) {
+					Chunk chunk = player.world.getChunkFromPos(MathHelper.floor(player.x), MathHelper.floor(player.z));
+					isSlimeChunk = (chunk.getSlimeRandom(987234911L).nextInt(10) == 0);
+
 					if (null != player.world.getProperties()) {
 						dayCount = (int) Math.floor(player.world.getProperties().getTime() / 24000);
 					}
@@ -116,6 +122,10 @@ public class InGameHudMixin extends DrawContext {
 
 			if (Config.config.addDayCounterToDebugOverlay) {
 				var8.drawWithShadow("Day: " + dayCount, 2, 128, 14737632);
+			}
+
+			if (Config.config.addSlimeChunkToDebugOverlay) {
+				var8.drawWithShadow("Slime Chunk: " + isSlimeChunk, 2, 136, 14737632);
 			}
 		}
 	}
