@@ -17,6 +17,7 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 * Add light level to debug screen
   * Calculated at player's eye level
 * Add biome to debug screen
+* Add slime chunk to debug screen
 * Ability to disable different particle types
 * Ability to use modern stack sizes for signs, wooden doors, and iron doors
 
