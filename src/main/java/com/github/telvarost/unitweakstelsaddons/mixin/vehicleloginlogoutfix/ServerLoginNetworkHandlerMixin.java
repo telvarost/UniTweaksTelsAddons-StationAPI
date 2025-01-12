@@ -26,7 +26,7 @@ public abstract class ServerLoginNetworkHandlerMixin {
     public void annoyanceFix_completeLoadVehicle(ServerPlayerEntity instance) {
         instance.initScreenHandler();
 
-        if (Config.config.boatLogoutLoginFixesEnabled) {
+        if (Config.config.vehicleLogoutLoginFixesEnabled) {
             /** - Spawn saved vehicle if on multiplayer */
             String vehicleName = instance.vehicle_getVehicleName();
             if (!vehicleName.equals("null")) {

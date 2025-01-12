@@ -21,7 +21,7 @@ public abstract class ServerPlayerConnectionManagerMixin {
     public void updateDimension(PlayerSaveHandler instance, PlayerEntity playerBase) {
         instance.savePlayerData(playerBase);
 
-        if (Config.config.boatLogoutLoginFixesEnabled) {
+        if (Config.config.vehicleLogoutLoginFixesEnabled) {
             /** - Remove vehicle on logout */
             if (null != playerBase.vehicle) {
                 playerBase.world.remove(playerBase.vehicle);

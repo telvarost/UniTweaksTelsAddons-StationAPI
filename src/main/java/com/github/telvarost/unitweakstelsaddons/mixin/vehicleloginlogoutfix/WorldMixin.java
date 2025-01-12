@@ -29,7 +29,7 @@ public class WorldMixin {
             )
     )
     public void spawnEntity(Entity arg, CallbackInfoReturnable<Boolean> cir) {
-        if (  (Config.config.boatLogoutLoginFixesEnabled)
+        if (  (Config.config.vehicleLogoutLoginFixesEnabled)
            && (VehicleHelper.isVehicleSaved)
            && (!this.isRemote)
         ) {

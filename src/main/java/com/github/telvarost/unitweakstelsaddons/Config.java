@@ -41,9 +41,6 @@ public class Config {
         @ConfigEntry(name = "Add Slime Chunk To Debug Overlay")
         public Boolean addSlimeChunkToDebugOverlay = true;
 
-        @ConfigEntry(name = "Boat Logout/Login Fix", multiplayerSynced = true)
-        public Boolean boatLogoutLoginFixesEnabled = true;
-
         @ConfigEntry(name = "Milk Squids", multiplayerSynced = true)
         //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean milkSquids = false;
@@ -66,6 +63,9 @@ public class Config {
         )
         //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean allowCraftingInventorySlots = false;
+
+        @ConfigEntry(name = "Vehicle Logout/Login Fix", multiplayerSynced = true)
+        public Boolean vehicleLogoutLoginFixesEnabled = true;
     }
 
     public static class StackSizeConfig {

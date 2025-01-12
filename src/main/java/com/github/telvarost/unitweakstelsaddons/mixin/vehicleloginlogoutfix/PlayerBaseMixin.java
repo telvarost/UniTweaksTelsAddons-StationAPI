@@ -63,7 +63,7 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
     public boolean interactWith(Entity instance, PlayerEntity playerBase) {
         boolean canInteract = instance.interact(playerBase);
 
-        if (Config.config.boatLogoutLoginFixesEnabled && canInteract) {
+        if (Config.config.vehicleLogoutLoginFixesEnabled && canInteract) {
             /** - Set vehicle data */
             _vehicleName = (instance.passenger != null) ?  EntityRegistry.getId(instance) : NULL_AS_STRING;
             if (!_vehicleName.equals(NULL_AS_STRING)) {
@@ -77,23 +77,25 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
 
 
     @Inject(method = "writeNbt", at = @At("HEAD"))
-    private void betaTweaks_writeCustomDataToTag(NbtCompound tag, CallbackInfo info) {
-        if (!Config.config.boatLogoutLoginFixesEnabled) {
+    private void uniTweaksTelsAddons_writeNbt(NbtCompound tag, CallbackInfo info) {
+        if (!Config.config.vehicleLogoutLoginFixesEnabled) {
             return;
         }
 
         /** - Save vehicle data */
         _vehicleName = (this.vehicle != null) ?  EntityRegistry.getId(this.vehicle) : NULL_AS_STRING;
-        tag.putString("VehicleName", _vehicleName);
-        if (!_vehicleName.equals(NULL_AS_STRING)) {
-            this.vehicle.write(_vehicleTag);
-            tag.put("VehicleTag", _vehicleTag);
+        if (null != _vehicleName) {
+            tag.putString("VehicleName", _vehicleName);
+            if (!_vehicleName.equals(NULL_AS_STRING)) {
+                this.vehicle.write(_vehicleTag);
+                tag.put("VehicleTag", _vehicleTag);
+            }
         }
     }
 
     @Inject(method = "readNbt", at = @At("HEAD"))
-    private void betaTweaks_readCustomDataFromTag(NbtCompound tag, CallbackInfo info) {
-        if (!Config.config.boatLogoutLoginFixesEnabled) {
+    private void uniTweaksTelsAddons_readNbt(NbtCompound tag, CallbackInfo info) {
+        if (!Config.config.vehicleLogoutLoginFixesEnabled) {
             return;
         }
 
