@@ -10,6 +10,7 @@ Find UniTweaks here: [https://modrinth.com/mod/unitweaks](https://modrinth.com/m
 Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync configs!
 
 * Modern slab placement (old placement removed when active)
+* Modern plant replacement when placing blocks (effects tall grass, ferns, and dead bushes)
 * Vehicle Login/Logout Fix - Fixes dismounting from vehicle on login
 * Add soul sand to shovel effective block list
 * Add day counter to debug screen

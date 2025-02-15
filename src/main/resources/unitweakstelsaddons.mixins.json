@@ -8,6 +8,7 @@
     "keepplayercraftinggrid.PlayerBaseMixin",
     "keepplayercraftinggrid.PlayerContainerMixin",
     "milksquids.SquidEntityMixin",
+    "modernplantreplacement.BlockItemMixin",
     "modernslabplacement.SlabBlockMixin",
     "modernslabplacement.SlabBlockItemMixin",
     "pigmushrooms.PigEntityMixin",

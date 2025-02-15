@@ -50,6 +50,13 @@ public class Config {
         public Boolean pigsDropBrownMushrooms = false;
 
         @ConfigEntry(
+                name = "Plant Replacement Fixes Enabled",
+                multiplayerSynced = true
+        )
+        //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
+        public Boolean plantReplacementFixesEnabled = true;
+
+        @ConfigEntry(
                 name = "Slab Placement Fixes Enabled",
                 description = "Restart required for changes to take effect",
                 multiplayerSynced = true
