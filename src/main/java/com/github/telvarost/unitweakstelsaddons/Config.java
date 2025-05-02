@@ -41,6 +41,13 @@ public class Config {
         @ConfigEntry(name = "Add Slime Chunk To Debug Overlay")
         public Boolean addSlimeChunkToDebugOverlay = true;
 
+        @ConfigEntry(
+                name = "Additions To Overlay Y Offset",
+                maxLength = 4096,
+                minLength = -4096
+        )
+        public Integer overlayAdditionsYOffset = 0;
+
         @ConfigEntry(name = "Milk Squids", multiplayerSynced = true)
         //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
         public Boolean milkSquids = false;
