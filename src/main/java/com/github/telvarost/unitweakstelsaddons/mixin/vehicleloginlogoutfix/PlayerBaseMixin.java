@@ -66,7 +66,8 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
 
         if (Config.config.vehicleLogoutLoginFixesEnabled && canInteract) {
             /** - Set vehicle data */
-            _vehicleName = (instance.passenger != null) ?  EntityRegistry.getId(instance) : NULL_AS_STRING;
+            //_vehicleName = (instance.passenger != null) ?  EntityRegistry.getId(instance) : NULL_AS_STRING;
+            _vehicleName = (this.vehicle != null) ?  EntityRegistry.getId(this.vehicle) : NULL_AS_STRING;
             if (_vehicleName != null && !_vehicleName.equals(NULL_AS_STRING)) {
                 instance.write(_vehicleTag);
             }
@@ -87,7 +88,7 @@ public abstract class PlayerBaseMixin extends LivingEntity implements VehicleInt
         _vehicleName = (this.vehicle != null) ?  EntityRegistry.getId(this.vehicle) : NULL_AS_STRING;
         if (null != _vehicleName) {
             tag.putString("VehicleName", _vehicleName);
-            if (_vehicleName != null && !_vehicleName.equals(NULL_AS_STRING)) {
+            if (!_vehicleName.equals(NULL_AS_STRING)) {
                 this.vehicle.write(_vehicleTag);
                 tag.put("VehicleTag", _vehicleTag);
             }
