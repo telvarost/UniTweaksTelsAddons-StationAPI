@@ -26,6 +26,7 @@ Mod now works on Multiplayer with GlassConfigAPI version 2.0+ used to sync confi
 All legacy features are default false unless otherwise specified.
 * Ability for pigs to drop mushrooms
 * Ability to milk squids
+* Ability to disable colored sheep spawning
 
 ## Installation using Prism Launcher
 

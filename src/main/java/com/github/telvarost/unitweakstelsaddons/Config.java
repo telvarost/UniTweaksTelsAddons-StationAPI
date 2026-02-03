@@ -42,11 +42,18 @@ public class Config {
         public Boolean addSlimeChunkToDebugOverlay = true;
 
         @ConfigEntry(
-                name = "Additions To Overlay Y Offset",
+                name = "Additions To Debug Overlay Y Offset",
                 maxLength = 4096,
                 minLength = -4096
         )
         public Integer overlayAdditionsYOffset = 0;
+
+        @ConfigEntry(
+                name = "Disable Colored Sheep Spawning",
+                description = "Makes sheep always spawn with white wool",
+                multiplayerSynced = true
+        )
+        public Boolean disableColoredSheepSpawning = false;
 
         @ConfigEntry(name = "Milk Squids", multiplayerSynced = true)
         //@ValueOnVanillaServer(booleanValue = TriBoolean.FALSE)
