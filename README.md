@@ -27,6 +27,7 @@ All legacy features are default false unless otherwise specified.
 * Ability for pigs to drop mushrooms
 * Ability to milk squids
 * Ability to disable colored sheep spawning
+* Allow player crafting grid (2x2 grid) to be used as inventory slots
 
 ## Installation using Prism Launcher
 
